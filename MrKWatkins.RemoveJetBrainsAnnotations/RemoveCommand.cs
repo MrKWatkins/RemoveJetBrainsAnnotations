@@ -1,7 +1,6 @@
 using Microsoft.Extensions.FileSystemGlobbing;
 using Mono.Cecil;
 using Mono.Collections.Generic;
-using Spectre.Console;
 using Spectre.Console.Cli;
 
 namespace MrKWatkins.RemoveJetBrainsAnnotations;
@@ -16,7 +15,14 @@ public sealed class RemoveCommand : Command<RemoveCommandSettings>
         var matcher = new Matcher();
         matcher.AddInclude(settings.Assemblies);
 
-         Parallel.ForEach(matcher.GetResultsInFullPath("/"), RemoveAttributes);
+        var files = matcher.GetResultsInFullPath(Environment.CurrentDirectory).ToList();
+
+        if (files.Count == 0)
+        {
+            throw new InvalidOperationException($"Pattern {settings.Assemblies} did not match any files in directory {Environment.CurrentDirectory}.");
+        }
+
+        Parallel.ForEach(files, RemoveAttributes);
 
         return 0;
     }
@@ -34,11 +40,11 @@ public sealed class RemoveCommand : Command<RemoveCommandSettings>
 
             File.Move(tempOutput, path, true);
 
-            AnsiConsole.WriteLine($"Assembly {path} processed successfully.");
+            Console.WriteLine($"Assembly {path} processed successfully.");
         }
         catch (Exception exception)
         {
-            AnsiConsole.WriteLine($"[red]Exception processing {path}: {exception.Message}[/]");
+            throw new InvalidOperationException($"Exception processing {path}: {exception.Message}", exception);
         }
         finally
         {
