@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <PackAsTool>true</PackAsTool>
-        <ToolCommandName>removejetbrainsattributes</ToolCommandName>
+        <ToolCommandName>removejetbrainsannotations</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
     </PropertyGroup>
 
