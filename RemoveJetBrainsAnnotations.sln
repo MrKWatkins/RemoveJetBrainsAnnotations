@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrKWatkins.RemoveJetBrainsAnnotations", "MrKWatkins.RemoveJetBrainsAnnotations\MrKWatkins.RemoveJetBrainsAnnotations.csproj", "{2439E530-C2FC-425A-8BC4-F3142117FD08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A615EA6E-BCC8-445F-B948-6C5AB2B60AB8}"
+	ProjectSection(SolutionItems) = preProject
+		..\ReadMe.md = ReadMe.md
+		..\Licence.md = Licence.md
+		..\Icon.png = Icon.png
+		..\.gitignore = .gitignore
+		..\Directory.Build.props = Directory.Build.props
+		..\Directory.Packages.props = Directory.Packages.props
+		..\.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{18C99631-BE3A-4CEA-8FC7-3FC820A0AF8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{6B708BC8-F379-42DE-B473-E3C51F104918}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build.yml = .github\workflows\build.yml
+		..\.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2439E530-C2FC-425A-8BC4-F3142117FD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2439E530-C2FC-425A-8BC4-F3142117FD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2439E530-C2FC-425A-8BC4-F3142117FD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2439E530-C2FC-425A-8BC4-F3142117FD08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18C99631-BE3A-4CEA-8FC7-3FC820A0AF8F} = {A615EA6E-BCC8-445F-B948-6C5AB2B60AB8}
+		{6B708BC8-F379-42DE-B473-E3C51F104918} = {18C99631-BE3A-4CEA-8FC7-3FC820A0AF8F}
+	EndGlobalSection
+EndGlobal

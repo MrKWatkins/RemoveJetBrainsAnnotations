@@ -1,0 +1,31 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+        <Title>$(MSBuildProjectName)</Title>
+        <Authors>Kevin Watkins</Authors>
+        <Copyright>Kevin Watkins 2025</Copyright>
+        <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/MrKWatkins/RemoveJetBrainsAnnotations</RepositoryUrl>
+        <PackageIcon>Icon.png</PackageIcon>
+        <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <!-- Allow missing documentation comments. -->
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+        <Content Include="..\Icon.png" Pack="true" PackagePath="\">
+            <Link>Icon.png</Link>
+        </Content>
+        <Content Include="..\ReadMe.md" Pack="true" PackagePath="\">
+            <Link>ReadMe.md</Link>
+        </Content>
+    </ItemGroup>
+</Project>

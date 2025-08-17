@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  checks: write
+  contents: write
+  id-token: write
+  pages: write
+
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore Dependencies
+        shell: bash
+        run: dotnet restore
+
+      - name: Build
+        shell: bash
+        run: dotnet build --no-restore --configuration Release
