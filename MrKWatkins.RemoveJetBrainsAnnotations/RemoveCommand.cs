@@ -10,7 +10,7 @@ public sealed class RemoveCommand : Command<RemoveCommandSettings>
 {
     private const string Namespace = "JetBrains.Annotations";
 
-    public override int Execute(CommandContext context, RemoveCommandSettings settings)
+    public override int Execute(CommandContext context, RemoveCommandSettings settings, CancellationToken cancellationToken)
     {
         var matcher = new Matcher();
         matcher.AddInclude(settings.Assemblies);
