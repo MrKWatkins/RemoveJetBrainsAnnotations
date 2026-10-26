@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>removejetbrainsannotations</ToolCommandName>
-        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <IsPackable>true</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>

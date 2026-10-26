@@ -1,33 +1,26 @@
 name: Release
-
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version Number'
-        required: true
+        description: Optional version without v; blank increments the latest stable tag minor version
         type: string
-
+        required: false
 permissions:
-  checks: write
-  contents: write
-  id-token: write
-  pages: write
-
+  contents: read
+concurrency:
+  group: release
+  cancel-in-progress: false
 jobs:
-  Release:
-    name: Release ${{ inputs.version }}
+  release:
+    name: Release
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-
+    permissions:
+      contents: write
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Publish to NuGet
-        uses: MrKWatkins/nuget-publish@main
+      - uses: MrKWatkins/build/dotnet/project@main
         with:
-          directory: .
-          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           version: ${{ inputs.version }}
+          docs: 'false'
+          publish-packages: 'true'

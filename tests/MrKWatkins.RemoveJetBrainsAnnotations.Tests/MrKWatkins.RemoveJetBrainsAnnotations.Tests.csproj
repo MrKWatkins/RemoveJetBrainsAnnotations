@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+    <NoWarn>$(NoWarn);CA1707;CA2007</NoWarn>
+    <OutputType>Exe</OutputType>
+    <EnableNUnitRunner>true</EnableNUnitRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/MrKWatkins.RemoveJetBrainsAnnotations/MrKWatkins.RemoveJetBrainsAnnotations.csproj" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" PrivateAssets="All" />
+    <PackageReference Include="MrKWatkins.Assertions" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <Using Include="MrKWatkins.Assertions" />
+    <Using Include="NUnit.Framework" />
+  </ItemGroup>
+</Project>

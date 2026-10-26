@@ -1,4 +1,4 @@
-﻿using MrKWatkins.RemoveJetBrainsAnnotations;
+using MrKWatkins.RemoveJetBrainsAnnotations;
 using Spectre.Console.Cli;
 
 var app = new CommandApp();
